@@ -13,6 +13,10 @@ class OrderFeedPage(BasePage):
     def wait_updating_data_on_page(self):
         self.wait_loading_page(OrderLocators.ORDER)
 
+    @allure.step('Ожидаем новый номер в разаделе "В работе')
+    def wait_new_number_in_prepared(self):
+        self.wait_loading_page(OrderLocators.NUMBER_PREPARED)
+
     @allure.step('Нажимем на заказ')
     def click_on_order(self):
         element = self.wait_and_find_element(OrderLocators.ORDER)

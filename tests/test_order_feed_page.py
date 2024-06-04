@@ -66,6 +66,7 @@ class TestOrderFeedPage:
         history = order_page.get_number_order_of_history()
         main_page.click_on_order_feed()
         order_page.wait_updating_data_on_page()
+        order_page.wait_new_number_in_prepared()
         prepared = order_page.get_number_of_prepared()
 
         assert history == '#' + prepared
